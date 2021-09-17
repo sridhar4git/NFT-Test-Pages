@@ -1274,6 +1274,7 @@ ul {
     }
     .body-content {
         overflow-x: hidden;
+        overflow-y: hidden;
     }
     .learn-more-block {
         bottom: 100px;
