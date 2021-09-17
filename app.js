@@ -369,18 +369,18 @@ $( document ).ready(function() {
 
                 // to show hide the learn more
                 if(totalScroll > 100) {
-                    $('#learn-more-block').css({opacity: '0', transform: 'translate(-50%, 100px)'})
+                    $('#learn-more-block').css({opacity: '0', transform: 'translate3d(-50%, 100px, 0)'})
                 }
 
                 if(totalScroll < 5) {
-                    $('#learn-more-block').css({opacity: '1', transform: 'translate(-50%, 0)'})
-                    diamondVideoBlock.style.transform = 'translateY(' + 0 +'px)';
+                    $('#learn-more-block').css({opacity: '1', transform: 'translate3d(-50%, 0, 0)'})
+                    diamondVideoBlock.style.transform = 'translate3d(0, ' + 0 +'px, 0)';
                     weAreFilled.style.opacity = 1
                     invaluableText.style.opacity = 1
                     // heroContentBlock.style.opacity = 1
                     heroContentBlock.css({opacity: 1, pointerEvents: 'none'})
                 } else {
-                    diamondVideoBlock.style.transform = 'translateY(' + (1 - (totalScroll/diamondYSpeed)) +'px)';
+                    diamondVideoBlock.style.transform = 'translate3d(0, ' + (1 - (totalScroll/diamondYSpeed)) +'px, 0';
                     weAreFilled.style.opacity = (1 - (totalScroll/opacitySpeed))
                     invaluableText.style.opacity = (1 - (totalScroll/opacitySpeed))
                     // heroContentBlock.style.opacity = (1 - (totalScroll/opacitySpeed))
@@ -414,9 +414,9 @@ $( document ).ready(function() {
                             helmetImgScrollVal = (helmetImgBlockWidth+section2Motion1ScrollHelmetDiff  - (scrollPercent*130))
                             console.log('nftTextScrollVal -- ', nftTextScrollVal)
 
-                            nftTextDiv.css({ transform : 'translateX(' + nftTextScrollVal +'px)' });
-                            posterImgBlock.css({ transform : 'translateX(' + posterImgScrollVal +'px)' });
-                            helmetImgBlock.css({ transform : 'translateX(' + helmetImgScrollVal +'px)' });
+                            nftTextDiv.css({ transform : 'translate3d(' + nftTextScrollVal +'px, 0, 0' });
+                            posterImgBlock.css({ transform : 'translate3d(' + posterImgScrollVal +'px, 0, 0' });
+                            helmetImgBlock.css({ transform : 'translate3d(' + helmetImgScrollVal +'px, 0, 0' });
                             section2Motion1Counter++
                         }else if(weAreUnFilledRightPos <= nftTextDivRightPos){
                             if(section2Motion2Counter===1){
@@ -427,9 +427,9 @@ $( document ).ready(function() {
                             let nftTextScrollMoreSpeedVal = (nftTextScrollVal - section2Motion2ScrollNFTDiff + (scrollPercent*120))
                             let posterImgScrollMoreSpeedVal = (posterImgScrollVal + section2Motion2ScrollPosterDiff - (scrollPercent*170))
                             let helmetImgScrollMoreSpeedVal = (helmetImgScrollVal +section2Motion2ScrollHelmetDiff - (scrollPercent*90))
-                            nftTextDiv.css({ transform : 'translateX(' + nftTextScrollMoreSpeedVal +'px)' });
-                            posterImgBlock.css({ transform : 'translateX(' + posterImgScrollMoreSpeedVal +'px)' });
-                            helmetImgBlock.css({ transform : 'translateX(' + helmetImgScrollMoreSpeedVal +'px)' });
+                            nftTextDiv.css({ transform : 'translate3d(' + nftTextScrollMoreSpeedVal +'px, 0, 0' });
+                            posterImgBlock.css({ transform : 'translate3d(' + posterImgScrollMoreSpeedVal +'px, 0, 0' });
+                            helmetImgBlock.css({ transform : 'translate3d(' + helmetImgScrollMoreSpeedVal +'px, 0, 0' });
                             section2Motion2Counter++;
                             if(posterImgBlockRightPos>0){
                                 section3Motion1Counter=1;
@@ -448,9 +448,9 @@ $( document ).ready(function() {
                                 superBowlGronkImgScrollVal = (superBowlImgBlockWidth+section3Motion1ScrollSuperBowlDiff  - (scrollPercent*60))
 
 
-                                collectiblesTextBlock.css({ transform : 'translateX(' + collectiblesTextScrollVal +'px)' });
-                                giraffImgBlock.css({ transform : 'translateX(' + giraffImgScrollVal +'px)' });
-                                superBowlImgBlock.css({ transform : 'translateX(' + superBowlGronkImgScrollVal +'px)' });
+                                collectiblesTextBlock.css({ transform : 'translate3d(' + collectiblesTextScrollVal +'px, 0, 0' });
+                                giraffImgBlock.css({ transform : 'translate3d(' + giraffImgScrollVal +'px, 0, 0' });
+                                superBowlImgBlock.css({ transform : 'translate3d(' + superBowlGronkImgScrollVal +'px, 0, 0' });
                                 section3Motion1Counter++
                             }else if(posterImgBlockRightPos <= 0 && (superBowlImgBlockPosition.left+superBowlImgBlockWidth)<=weAreUnFilledRightPos){
 
@@ -462,9 +462,9 @@ $( document ).ready(function() {
                                 let collectiblesTextScrollMoreSpeedVal = (collectiblesTextScrollVal - section3Motion2ScrollCollectiblesDiff + (scrollPercent*300))
                                 let giraffImgScrollMoreSpeedVal = (giraffImgScrollVal + section3Motion2ScrollGiraffDiff - (scrollPercent*130))
                                 let superBowlGronkImgScrollMoreSpeedVal = (superBowlGronkImgScrollVal +section3Motion2ScrollSuperBowlDiff - (scrollPercent*260))
-                                collectiblesTextBlock.css({ transform : 'translateX(' + collectiblesTextScrollMoreSpeedVal +'px)' });
-                                giraffImgBlock.css({ transform : 'translateX(' + giraffImgScrollMoreSpeedVal +'px)' });
-                                superBowlImgBlock.css({ transform : 'translateX(' + superBowlGronkImgScrollMoreSpeedVal +'px)' });
+                                collectiblesTextBlock.css({ transform : 'translate3d(' + collectiblesTextScrollMoreSpeedVal +'px, 0, 0' });
+                                giraffImgBlock.css({ transform : 'translate3d(' + giraffImgScrollMoreSpeedVal +'px, 0, 0' });
+                                superBowlImgBlock.css({ transform : 'translate3d(' + superBowlGronkImgScrollMoreSpeedVal +'px, 0, 0' });
                                 section3Motion2Counter++;
                                 if(collectiblesTextBlockPosition.left<window.innerWidth){
                                     section4Motion1Counter=1;
@@ -472,7 +472,7 @@ $( document ).ready(function() {
                                 }
 
                                 if(collectiblesTextBlockPosition.left>=window.innerWidth && ((utilityTextBlockPosition.left+utilityTextBlockWidth)< weAreUnFilledRightPos || (isUtilitySet && iBlockTop>(totalScroll+window.innerHeight)))){
-                                    heroBlock.css({transform: 'translateY(' + 0 +'px)' })
+                                    heroBlock.css({transform: 'translate3d(0, ' + 0 +'px, 0' })
                                     console.log('reached1')
                                     console.log("scrollPercent 150-- ",scrollPercent*150)
                                     if(section4Motion1Counter===1){
@@ -491,9 +491,9 @@ $( document ).ready(function() {
                                     sImgScrollVal = (sImgBlockWidth+section4Motion1ScrollSImgDiff  - (scrollPercent*60))
                                     infinityImgScrollVal = (infinityImgBlockWidth+section4Motion1ScrollInfinityDiff  - (scrollPercent*160))
                                     //console.log("utilityTextScrollVal --- ",utilityTextScrollVal);
-                                    utilityTextBlock.css({ transform : 'translateX(' + utilityTextScrollVal +'px)' });
-                                    sImgBlock.css({ transform : 'translateX(' + sImgScrollVal +'px)' });
-                                    infinityImgBlock.css({ transform : 'translateX(' + infinityImgScrollVal +'px)' });
+                                    utilityTextBlock.css({ transform : 'translate3d(' + utilityTextScrollVal +'px, 0, 0' });
+                                    sImgBlock.css({ transform : 'translate3d(' + sImgScrollVal +'px, 0, 0' });
+                                    infinityImgBlock.css({ transform : 'translate3d(' + infinityImgScrollVal +'px, 0, 0' });
                                     section4Motion1Counter++
                                     isIblockSet=false;
                                 }else if(collectiblesTextBlockPosition.left>=window.innerWidth && (((utilityTextBlockPosition.left+utilityTextBlockWidth)>= weAreUnFilledRightPos) )){
@@ -510,9 +510,9 @@ $( document ).ready(function() {
                                     let utilityTextScrollMoreSpeedVal = (utilityTextScrollVal - section4Motion2ScrollUtilityDiff + (scrollPercent*10))
                                     let sImgScrollMoreSpeedVal = (sImgScrollVal + section4Motion2ScrollSImgDiff - (scrollPercent*10))
                                     let infinityImgScrollMoreSpeedVal = (infinityImgScrollVal +section4Motion2ScrollInfinityDiff - (scrollPercent*10))
-                                    utilityTextBlock.css({ transform : 'translateX(' + utilityTextScrollMoreSpeedVal +'px)' });
-                                    sImgBlock.css({ transform : 'translateX(' + sImgScrollMoreSpeedVal +'px)' });
-                                    infinityImgBlock.css({ transform : 'translateX(' + infinityImgScrollMoreSpeedVal +'px)' });
+                                    utilityTextBlock.css({ transform : 'translate3d(' + utilityTextScrollMoreSpeedVal +'px, 0, 0' });
+                                    sImgBlock.css({ transform : 'translate3d(' + sImgScrollMoreSpeedVal +'px, 0, 0' });
+                                    infinityImgBlock.css({ transform : 'translate3d(' + infinityImgScrollMoreSpeedVal +'px, 0, 0' });
                                     section4Motion2Counter++;
 
                                     //weAreUnFilled.css({opacity: ((((iBlockTop-300)-totalScroll)/500))})
@@ -557,14 +557,14 @@ $( document ).ready(function() {
                     }else if(iBlockTop<=(totalScroll+window.innerHeight)){
                         console.log("isIblockSet bottom-------- ",isIblockSet)
                         isIblockSet= false;
-                        heroBlock.css({transform: 'translateY(' + (iBlock.offset().top-(totalScroll+window.innerHeight)) +'px)' })
+                        heroBlock.css({transform: 'translate3d(0, ' + (iBlock.offset().top-(totalScroll+window.innerHeight)) +'px, 0' })
                         if((iBlockTop<(totalScroll+window.innerHeight)) && (iBlockTop>=totalScroll)){
                             if(windowSize > 767) {
-                                iContentBlock1.css({ transform : 'translateX(' + (-iContentBlock1Width + (window.innerWidth/2) + ((((totalScroll)-iBlockTop)/2)*2)) +'px)' })
-                                iContentBlock2.css({ transform : 'translateX(' + (-iContentBlock2Width + (window.innerWidth/2) + ((((totalScroll)-iBlockTop)/1)*1.5)) +'px)' })
+                                iContentBlock1.css({ transform : 'translate3d(' + (-iContentBlock1Width + (window.innerWidth/2) + ((((totalScroll)-iBlockTop)/2)*2)) +'px, 0, 0' })
+                                iContentBlock2.css({ transform : 'translate3d(' + (-iContentBlock2Width + (window.innerWidth/2) + ((((totalScroll)-iBlockTop)/1)*1.5)) +'px, 0, 0' })
                             } else {
-                                iContentBlock1.css({ transform : 'translateX(' + (-iContentBlock1Width + (window.innerWidth) + ((((totalScroll)-iBlockTop)/2))) +'px)' })
-                                iContentBlock2.css({ transform : 'translateX(' + (-iContentBlock2Width + (window.innerWidth) + ((((totalScroll)-iBlockTop)/1))) +'px)' })
+                                iContentBlock1.css({ transform : 'translate3d(' + (-iContentBlock1Width + (window.innerWidth) + ((((totalScroll)-iBlockTop)/2))) +'px, 0, 0' })
+                                iContentBlock2.css({ transform : 'translate3d(' + (-iContentBlock2Width + (window.innerWidth) + ((((totalScroll)-iBlockTop)/1))) +'px, 0, 0' })
                             }
                         }
                     }
