@@ -203,7 +203,9 @@ $( document ).ready(function() {
             const footerBlockTop = footerBlock.offset().top;
 
             const footer = $('#footer');
+            const footerHeight = footer.height();
             const footerTop = footer.offset().top;
+            const footerBottom = footerTop+footerHeight;
 
             // affix the progress bar to the bottom of the screen
             if ((windowBottom - 100 > roadmapBlockTop) && !(footerBlockTop < windowBottom)) {
@@ -332,6 +334,49 @@ $( document ).ready(function() {
             const iContentBlock2Top = iContentBlock2.offset().top;
 
 
+            if(footerBottom+70 < windowBottom){
+                console.log('bottom reached')
+                // footer.css({position: 'fixed'})
+                // footer.addClass( "footer-affix" );
+                // $('body').css({overflowY: 'hidden'});
+
+                let touchstartX = 0
+                let touchendX = 0
+
+                const footerB = document.getElementById('footer')
+
+                function handleGesture() {
+                    if (touchendX < touchstartX) {
+                        console.log('swiped top!')
+                        // $('body').css({overflowY: 'hidden'});
+                        // footer.addClass( "footer-affix" );
+                    }
+                    if (touchendX > touchstartX) {
+                        console.log('swiped bottom!')
+                        // $('body').css({overflowY: 'auto'});
+                        // footer.removeClass( "footer-affix" );
+                    }
+                }
+
+                footerB.addEventListener('touchstart', e => {
+                    touchstartX = e.changedTouches[0].screenY
+                })
+
+                footerB.addEventListener('touchend', e => {
+                    touchendX = e.changedTouches[0].screenY
+                    handleGesture()
+                })
+
+            }
+
+            /*if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+                var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+                x = touch.pageX;
+                y = touch.pageY;
+            } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+                x = e.clientX;
+                y = e.clientY;
+            }*/
 
             const secondaryBlock = $('.secondary-block')
 
