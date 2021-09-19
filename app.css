@@ -1624,7 +1624,7 @@ ul {
 }
 @media screen and (max-width: 375px) and (max-height: 812px){
     #scroll-block {
-        min-height: 4660px;
+        min-height: 4670px;
     }
 }
 @media screen and (max-width: 375px) and (max-height: 667px){
