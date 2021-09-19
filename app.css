@@ -1,6 +1,5 @@
 html {
     scroll-behavior: smooth;
-    opacity: 1;
 }
 body, html {
     /*background: #0b0e11;*/
@@ -1600,5 +1599,16 @@ ul {
     }
     .about .about-block .content-block .body-copy {
         padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    #scroll-block {
+        min-height: 4675px;
+    }
+}
+@media screen and (max-width: 390px) {
+    #scroll-block {
+        min-height: 4733px;
     }
 }
