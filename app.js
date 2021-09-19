@@ -128,9 +128,12 @@ $( document ).ready(function() {
         });
 
         var windowSize;
+        var windowSizeHeight;
         function displayWindowSize() {
             windowSize = document.documentElement.clientWidth;
+            windowSizeHeight = document.documentElement.clientHeight;
             // console.log("windowSize: ", windowSize)
+            console.log("windowSizeHeight: ", windowSizeHeight)
         }
 
         var nftTextScrollVal = 0;
@@ -544,13 +547,17 @@ $( document ).ready(function() {
                                 }else if(collectiblesTextBlockPosition.left>=window.innerWidth && (((utilityTextBlockPosition.left+utilityTextBlockWidth)>= weAreUnFilledRightPos) )){
                                     console.log("isIblockSet-------- ",isIblockSet)
                                     if(!isIblockSet){
-                                        if(windowSize <= 414 && windowSize > 390){
+                                        if(windowSize <= 428 && windowSize > 414){
+                                            iBlock.css({top: 2590  + 'px'})
+                                        } else if(windowSize <= 414 && windowSize > 390){
                                             iBlock.css({top: 2340  + 'px'})
                                         } else if(windowSize <= 390 && windowSize > 375){
                                             iBlock.css({top: 2400  + 'px'})
                                         } else {
                                             iBlock.css({top: totalScroll+window.innerHeight  + 'px'})
                                         }
+
+
                                     }
                                     //utilityTextBlock.css({ transform : 'translateX(' + (weAreUnFilledRightPos - utilityTextBlockWidth+1) +'px)' });
                                     if(section4Motion2Counter===1){
