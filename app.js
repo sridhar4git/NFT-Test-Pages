@@ -549,8 +549,10 @@ $( document ).ready(function() {
                                     if(!isIblockSet){
                                         if(windowSize <= 428 && windowSize > 414){
                                             iBlock.css({top: 2590  + 'px'})
-                                        } else if(windowSize <= 414 && windowSize > 390){
+                                        } else if(windowSize <= 414 && windowSize > 412){
                                             iBlock.css({top: 2340  + 'px'})
+                                        } else if(windowSize <= 412 && windowSize > 390){
+                                            iBlock.css({top: 2424  + 'px'})
                                         } else if(windowSize <= 390 && windowSize > 375){
                                             iBlock.css({top: 2400  + 'px'})
                                         } else {
